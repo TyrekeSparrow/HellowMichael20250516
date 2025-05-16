@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HelloMichael</string>
+    <string name="start_bitmap_activity">StartBitmapActivity</string>
+    <string name="display_bitmap_layout">displayBitmapLayout</string>
+</resources>

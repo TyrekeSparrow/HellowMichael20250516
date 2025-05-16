@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+
+    <Button
+        android:id="@+id/reuse_image_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="reuseBitmap"
+        android:textAllCaps="false" />
+
+    <com.michael.hellomichael.view.ReuseImageView
+        android:id="@+id/reuse_image_view1"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:background="#FF370099" />
+
+
+    <!--
+    <ImageView
+        android:id="@+id/reuse_image_view2"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:background="#FF6677B3" />
+    -->
+
+</LinearLayout>
