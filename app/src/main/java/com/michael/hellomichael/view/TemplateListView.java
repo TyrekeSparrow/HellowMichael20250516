@@ -45,7 +45,7 @@ public class TemplateListView extends ScrollView {
         addRoot();
     }
 
-    private LinearLayout mRoot = null;
+    public LinearLayout mRoot = null;
     private void addRoot() {
         mRoot = new LinearLayout(getContext());
         mRoot.setOrientation(LinearLayout.VERTICAL);
@@ -92,24 +92,34 @@ public class TemplateListView extends ScrollView {
     private void addBeanLayout(BaseBean bean) {
         View layout = getBeanLayout(bean);
         mRoot.addView(layout);
+
+//
+//        // get last bottom
+//        // get height
+//        int lastBottom = layout.getBottom();
+//        if (lastBottom > mVisibleBottom) {
+//            int lastIndex = mRoot.getChildCount() - 1;
+//            updateLastIndex(lastIndex);
+//        }
+
     }
 
     private View getBeanLayout(BaseBean bean) {
         if (bean instanceof Bean1) {
-            return new Layout1(getContext());
+            return new Layout1(getContext(), bean. conntent);
         }
         else if (bean instanceof Bean2) {
-            return new Layout2(getContext());
+            return new Layout2(getContext(), bean. conntent);
 
         }
         else if (bean instanceof Bean3) {
-            return new Layout3(getContext());
+            return new Layout3(getContext(), bean.conntent);
         }
         else if (bean instanceof Bean4) {
-            return new Layout4(getContext());
+            return new Layout4(getContext(), bean.conntent);
         }
         else if (bean instanceof Bean5) {
-            return new Layout5(getContext());
+            return new Layout5(getContext(), bean.conntent);
         }
         else {
             addView(new TextView(getContext()));
@@ -117,29 +127,117 @@ public class TemplateListView extends ScrollView {
         return new View(getContext());
     }
 
+    private void updateFirstIndex() {
+        mFirstIndex++;
+        Log.d(Tag.REUSE_IMAGE_VIEW, "=========================== mFirstIndex = " + mFirstIndex);
+    }
+
+    private void updateLastIndex(int lastIndex) {
+        mLastIndex = lastIndex;
+        Log.d(Tag.REUSE_IMAGE_VIEW, "=========================== mLastIndex = " + mLastIndex);
+    }
+
+    // addView
+    // onScroll
+
+    private int mVisibleTop = 0;
+    private int mVisibleBottom = getHeight();
+
+
+    private int mFirstIndex = 0;
+    private int mLastIndex = 0;
+
+
+
+
+    public void onVisibleChanged(int newTop, int oldTop) {
+        mVisibleTop = newTop;
+        mVisibleBottom = newTop + getHeight();
+        Log.d(Tag.REUSE_IMAGE_VIEW, "======================================== mVisibleTop = " + mVisibleTop);
+        Log.d(Tag.REUSE_IMAGE_VIEW, "======================================== mVisibleBottom = " + mVisibleBottom);
+
+
+//        // update first index
+//        int firstBottom = mRoot. getChildAt(mFirstIndex). getBottom();
+//        Log.d(Tag.REUSE_IMAGE_VIEW, "======================================== firstBottom = " + firstBottom);
+//        if (firstBottom < mVisibleTop) {
+//            updateFirstIndex();
+//        }
+//        // update last index
+
+
+
+
+        // first visible index
+        // lastVisible index;
+
+        // new old
+
+//        int newFirstIndex = mFirstIndex;
+//        int newLastIndex = mLastIndex;
+//
+//        for (int i = 0; i < mRoot.getChildCount(); i++) {
+////            int
+//
+//        }
+
+        // TODO add view
+
+
+
+        // TODO removeView
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
     @Override
-    protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        super.onScrollChanged(l, t, oldl, oldt);
+    protected void onScrollChanged(int left, int top, int oldTop, int oldt) {
+        super.onScrollChanged(left, top, oldTop, oldt);
 //        Log.d(Tag.REUSE_IMAGE_VIEW, "==================== onScrollChanged l = " + l);
 //        Log.d(Tag.REUSE_IMAGE_VIEW, "==================== onScrollChanged oldtop = " + oldt);
-        Log.d(Tag.REUSE_IMAGE_VIEW, "==================== onScrollChanged top = " + t);
+//        Log.d(Tag.REUSE_IMAGE_VIEW, "==================== onScrollChanged top = " + t);
 //        Log.d(Tag.REUSE_IMAGE_VIEW, "==================== onScrollChanged oldl = " + oldl);
 
 
 
 //        Log.d(Tag.REUSE_IMAGE_VIEW, "============ mRoot.getChildCount() = " + mRoot.getChildCount());
 
+        // TODO
         // isVisible
         // removeInVisible
         // addVisible
 
 //        Log.d(Tag.REUSE_IMAGE_VIEW, "================ mRoot.getHeight() = " + mRoot.getHeight());
-        Log.d(Tag.REUSE_IMAGE_VIEW, "================ this.getHeight() = " + this.getHeight());
+//        Log.d(Tag.REUSE_IMAGE_VIEW, "================ this.getHeight() = " + this.getHeight());
 
-        int visibleTop = t;
-        int visibleBottom = t + getHeight();
-        Log.d(Tag.REUSE_IMAGE_VIEW, "======================================== visibleTop = " + visibleTop);
-        Log.d(Tag.REUSE_IMAGE_VIEW, "======================================== visibleBottom = " + visibleBottom);
+//        int visibleTop = t;
+//        int visibleBottom = t + getHeight();
+//        Log.d(Tag.REUSE_IMAGE_VIEW, "======================================== visibleTop = " + visibleTop);
+//        Log.d(Tag.REUSE_IMAGE_VIEW, "======================================== visibleBottom = " + visibleBottom);
+
+        onVisibleChanged(top, oldTop);
 
         // visible child
         // onChildInVisible
@@ -147,28 +245,8 @@ public class TemplateListView extends ScrollView {
 
 
 
-
-        if (mRoot.getChildCount() > 1) {
-
-
-
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child2.getScrollX() = " + child2.getScrollX());
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child2.getScrollY() = " + child2.getScrollY());
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child2.getX() = " + child2.getX());
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child2.getY() = " + child2.getY());
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child2.getLeft() = " + child2.getLeft());
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child2.getRight() = " + child2.getRight());
-
-            View child1 = mRoot.getChildAt(0);
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child2.getTop() = " + child2.getTop());
-            Log.d(Tag.REUSE_IMAGE_VIEW, "====================================== child1.getBottom() = " + child1.getBottom());
-
-//            View child3 = mRoot.getChildAt(2);
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child3.getTop() = " + child3.getTop());
-//            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child3.getBottom() = " + child3.getBottom());
-
-            View child5 = mRoot.getChildAt(4);
-            Log.d(Tag.REUSE_IMAGE_VIEW, "========================================== child5.getTop() = " + child5.getTop());
+        // update first visible index
+        // update last visible index
 
 
 
@@ -176,12 +254,29 @@ public class TemplateListView extends ScrollView {
 
 
 
-
-
-
-
-
-        }
+//        if (mRoot.getChildCount() > 1) {
+//
+//
+//            View child1 = mRoot.getChildAt(0);
+////            Log.d(Tag.REUSE_IMAGE_VIEW, "=================== child2.getTop() = " + child2.getTop());
+//            Log.d(Tag.REUSE_IMAGE_VIEW, "====================================== child1.getBottom() = " + child1.getBottom());
+//
+//
+//            View child5 = mRoot.getChildAt(4);
+//            Log.d(Tag.REUSE_IMAGE_VIEW, "========================================== child5.getTop() = " + child5.getTop());
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//        }
 
 
 

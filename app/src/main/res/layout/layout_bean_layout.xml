@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="displayBean"
+        android:onClick="displayBean"
+        android:textAllCaps="false"
+        />
+
+    <include
+        android:id="@+id/cover_layout"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        layout="@layout/layout_content_cover"
+        />
+
+
+
+
+
+
+
+</LinearLayout>

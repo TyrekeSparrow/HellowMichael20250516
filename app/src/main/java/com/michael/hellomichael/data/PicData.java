@@ -2,7 +2,7 @@ package com.michael.hellomichael.data;
 
 public class PicData {
 //    // swim urls
-//    public static final String IMAGE1_PATH = "/storage/emulated/0/swim/swim1.jpg";
+    public static final String IMAGE1_PATH = "/storage/emulated/0/swim/swim1.jpg";
 //    public static final int IMAGE1_WIDTH = 4032;
 //    public static final int IMAGE1_HEIGHT= 3024;
 //

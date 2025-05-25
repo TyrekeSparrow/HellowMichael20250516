@@ -27,27 +27,22 @@ public class ServerData {
 
     public static List getFirstData() {
         ArrayList<BaseBean> beanList = new ArrayList<BaseBean>();
-        beanList.add(new Bean1());
-        beanList.add(new Bean2());
-        beanList.add(new Bean3());
-        beanList.add(new Bean4());
-        beanList.add(new Bean5());
+        beanList.add(new Bean1("content1"));
+        beanList.add(new Bean2("content2"));
+        beanList.add(new Bean3("content3"));
+        beanList.add(new Bean4("content4"));
+        beanList.add(new Bean5("content5"));
         return beanList;
     }
-
 
     public static List getMoreData() {
         ArrayList<BaseBean> beanList = new ArrayList<BaseBean>();
-        beanList.add(new Bean1());
-        beanList.add(new Bean5());
-        beanList.add(new Bean2());
-        beanList.add(new Bean4());
-        beanList.add(new Bean3());
+        beanList.add(new Bean1("content6"));
+        beanList.add(new Bean5("content7"));
+        beanList.add(new Bean2("content8"));
+        beanList.add(new Bean4("content9"));
+        beanList.add(new Bean3("content10"));
         return beanList;
     }
-
-
-
-
 
 }

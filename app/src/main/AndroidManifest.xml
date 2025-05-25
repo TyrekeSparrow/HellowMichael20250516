@@ -31,6 +31,8 @@
         <activity android:name=".activity.BitmapDisplayActivity"/>
         <activity android:name=".activity.BitmapReuseActivity"/>
         <activity android:name=".activity.ImageListActivity"/>
+        <activity android:name=".auto.Bean2LayoutActivity"/>
+        <activity android:name=".activity.FaceRecognizeActivity"/>
     </application>
 
 </manifest>

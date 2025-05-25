@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
 import com.michael.hellomichael.R;
+import com.michael.hellomichael.auto.Bean2LayoutActivity;
 
 public class HelloMainActivity extends Activity {
     @Override
@@ -76,4 +77,7 @@ public class HelloMainActivity extends Activity {
     }
 
 
+    public void startIOCActivity(View view) {
+        startActivity(new Intent(getApplicationContext(), Bean2LayoutActivity.class));
+    }
 }

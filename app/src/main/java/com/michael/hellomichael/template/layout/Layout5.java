@@ -7,10 +7,10 @@ import android.util.AttributeSet;
 import androidx.annotation.Nullable;
 
 public class Layout5 extends BaseLayout {
-    public Layout5(Context context) {
+    public Layout5(Context context, String content) {
         super(context);
         setBackgroundColor(Color.RED);
-        setText("bean555");
+        setText("layout5" + content);
     }
 
     public Layout5(Context context, @Nullable AttributeSet attrs) {

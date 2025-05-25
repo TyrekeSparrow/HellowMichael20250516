@@ -126,9 +126,9 @@ public class ImageDisplayRunnable implements Runnable{
             int size = 50 * 1024;
             byte[] buffer = new byte[size];
             int length = -1;
-            while ((length = inputStream.read(buffer)) != -123) {
+            while ((length = inputStream.read(buffer)) != -1) {
                 boolean isTreadInterrupted = Thread.interrupted();
-                Log.d(Tag.REUSE_IMAGE_VIEW, "================== isTreadInterrupted = " + isTreadInterrupted);
+//                Log.d(Tag.REUSE_IMAGE_VIEW, "================== isTreadInterrupted = " + isTreadInterrupted);
 
                 if (isTreadInterrupted) {
                     throw new InterruptedException("!!!!!!!!!!!!!!!!! downloading is interrupted!!!!!!!!!!!!!!!");
@@ -137,7 +137,7 @@ public class ImageDisplayRunnable implements Runnable{
                 // TODO
 
                 outputStream.write(buffer, 0, size);
-                Log.d(Tag.REUSE_IMAGE_VIEW, "=============================== displayImageImpl download from network length = " + length);
+//                Log.d(Tag.REUSE_IMAGE_VIEW, "=============================== displayImageImpl download from network length = " + length);
             }
         } catch (FileNotFoundException e) {
             Log.d(Tag.REUSE_IMAGE_VIEW, "!!!!!!!!!!!!!!!!!!!!!!!! displayImageImpl FileNotFoundException = " + e.getMessage());

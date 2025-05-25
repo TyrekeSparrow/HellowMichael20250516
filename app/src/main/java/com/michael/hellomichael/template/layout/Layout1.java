@@ -8,10 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 public class Layout1 extends BaseLayout {
-    public Layout1(Context context) {
+    public Layout1(Context context, String content) {
         super(context);
         setBackgroundColor(Color.BLUE);
-        setText("bean111");
+        setText("layout1" + content);
     }
 
     public Layout1(Context context, @Nullable AttributeSet attrs) {
@@ -25,6 +25,7 @@ public class Layout1 extends BaseLayout {
     public Layout1(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
+
 
 
 }
